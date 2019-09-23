@@ -1,0 +1,22 @@
+{
+  "name": "cypress-mochawesome-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn clean ; yarn test:run ; yarn test:report",
+    "clean": "rm -rf mochawesome cypress/screenshots cypress/videos",
+    "test:run": "cypress run",
+    "test:report": "rm -rf report && mkdir report && yarn test:merge && yarn test:marge",
+    "test:merge": "mochawesome-merge --reportDir mochawesome > mochareports/report.json",
+    "test:marge": "marge mochareports/report.json -o mochareports"
+  },
+  "dependencies": {
+    "cypress": "^3.4.1",
+    "cypress-social-logins": "^1.0.4",
+    "cypress-xpath": "^1.4.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
+    "mochawesome-merge": "^1.0.6"
+  }
+}
