@@ -1,7 +1,6 @@
 {
-  "name": "cypress-mochawesome-example",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "cypress-e2e-test",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "test": "yarn clean ; yarn test:run ; yarn test:report",
