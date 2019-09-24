@@ -4,6 +4,9 @@
 ## 安装
 `git clone https://github.com/G2Bent/cypress-e2e-test.git`
 
+## 安装依赖
+`npm i`
+
 ## 运行
 `npm run test`
 

@@ -5,11 +5,11 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn clean ; yarn test:run ; yarn test:report",
-    "clean": "rm -rf mochawesome cypress/screenshots cypress/videos",
+    "clean": "rm -rf mochawesome-report cypress/screenshots cypress/videos",
     "test:run": "cypress run",
     "test:report": "rm -rf report && mkdir report && yarn test:merge && yarn test:marge",
-    "test:merge": "mochawesome-merge --reportDir mochawesome > mochareports/report.json",
-    "test:marge": "marge mochareports/report.json -o mochareports"
+    "test:merge": "mochawesome-merge > report/mochawesome.json",
+    "test:marge": "marge report/mochawesome.json -o report"
   },
   "dependencies": {
     "cypress": "^3.4.1",
