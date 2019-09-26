@@ -11,11 +11,6 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v5-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - v5-deps-{{ .Branch }}-
-            - v5-deps-
       - run: yarn install
       - save_cache:
           key: v5-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -24,17 +19,8 @@ jobs:
             - ~/.cache  
       - run:
           when: always
-          name: Lint project
-          command: yarn run lint
-      - run:
-          when: always
-          name: Compile TypeScript
-          command: yarn run compile
-      - run:
-          when: always
-          name: Run Jest Tests with Coverage
+          name: Run Tests with Coverage
           command: yarn run test
-
 workflows:
   build-test:
     jobs:
