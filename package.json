@@ -8,7 +8,8 @@
     "test:run": "cypress run",
     "test:report": "rm -rf report && mkdir report && yarn test:merge && yarn test:marge",
     "test:merge": "mochawesome-merge > report/mochawesome.json",
-    "test:marge": "marge report/mochawesome.json -o report"
+    "test:marge": "marge report/mochawesome.json -o report",
+    "slack": "cypress-slack-reporter --logger"
   },
   "dependencies": {
     "cypress": "^3.4.1",
@@ -16,6 +17,11 @@
     "cypress-xpath": "^1.4.0",
     "mocha": "^5.2.0",
     "mochawesome": "^3.1.1",
-    "mochawesome-merge": "^1.0.6"
+    "mochawesome-merge": "^1.0.6",
+    "@slack/types": "1.2.0",
+    "@slack/webhook": "5.0.2",
+    "cypress-failed-log": "2.5.1",
+    "mocha-junit-reporter": "1.23.1",
+    "cypress-slack-reporter": "0.4.3"
   }
 }
