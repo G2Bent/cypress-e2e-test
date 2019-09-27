@@ -6,9 +6,9 @@
     "test": "yarn clean ; yarn test:run ; yarn test:report",
     "clean": "rm -rf mochawesome-report cypress/screenshots cypress/videos",
     "test:run": "cypress run",
-    "test:report": "rm -rf report && mkdir report && yarn test:merge && yarn test:marge",
-    "test:merge": "mochawesome-merge > report/mochawesome.json",
-    "test:marge": "marge report/mochawesome.json -o report",
+    "test:report": "rm -rf mochareports && mkdir mochareports && yarn test:merge && yarn test:marge",
+    "test:merge": "mochawesome-merge > mochareports/mochawesome.json",
+    "test:marge": "marge mochareports/mochawesome.json -o mochareports",
     "slack": "cypress-slack-reporter --logger"
   },
   "dependencies": {
