@@ -4,6 +4,7 @@ services:
         image: cypresstestdocker
         environment:
             - URI_ROOT=klook.com
+            - SLACK_WEBHOOK = "https://hooks.slack.com/services/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"
         stdin_open: true
         tty: true
         volumes:
