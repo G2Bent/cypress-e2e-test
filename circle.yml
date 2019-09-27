@@ -21,18 +21,6 @@ jobs:
           when: always
           name: Run Tests with Coverage
           command: yarn run test
-      - run:
-          name: Slack Custom Reporting
-          when: always
-          command: make slack-alert 
-      - run:
-          name: Full cypress run with reporting via script
-          when: always
-          command: make run-script 
-      - run:
-          name: Full cypress run with cypress-slack-reporter-full
-          when: always
-          command: ./node_modules/.bin/cypress-slack-reporter-full 
 workflows:
   build-test:
     jobs:
